@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quiz Runner 3D</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="gamePage">
+  <canvas id="game"></canvas>
+
+  <div id="hud">
+    <div class="row">
+      <div class="pill">Score: <span id="scoreValue">0</span></div>
+      <div class="pill">Time: <span id="timeValue">00:00.0</span></div>
+      <button id="musicBtn" class="pill btn">Music: ON</button>
+      <button id="fullscreenBtn" class="pill btn">Fullscreen</button>
+    </div>
+
+    <div class="row hudBars">
+      <div class="energy">
+        <div class="energyTop">
+          <div class="label">ENERGY</div>
+          <div id="energyText" class="value">100 / 100</div>
+        </div>
+        <div class="bar">
+          <div id="energyFill" class="fill"></div>
+        </div>
+      </div>
+
+      <div class="boost">
+        <div class="boostTop">
+          <div class="label">BOOST</div>
+          <div id="boostText" class="value">4.0s</div>
+        </div>
+        <div class="bar">
+          <div id="boostFill" class="fillBoost"></div>
+        </div>
+        <div class="hint">Hold SHIFT to boost</div>
+        <div class="hint">If boost reaches 0, it must recharge to 1.0 before you can use it again</div>
+        <div class="hint">Music starts on first key press / click</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- question is OUTSIDE hud so it can stay at the top middle -->
+  <div id="questionWrap">
+    <div id="questionText" class="question">Get ready...</div>
+  </div>
+
+  <div id="gameOver" class="overlay hidden">
+    <div class="card">
+      <div id="overlayTitle" class="title">GAME OVER</div>
+      <div id="overlaySub" class="sub">Press R to restart</div>
+    </div>
+  </div>
+
+  <audio id="bgm" src="./bgm.mp3" loop preload="auto"></audio>
+  <audio id="jumpSfx" src="./jump.mp3" preload="auto"></audio>
+  <audio id="boostSfx" src="./boost.mp3" loop preload="auto"></audio>
+  <audio id="hitSfx" src="./hit.wav" preload="auto"></audio>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
