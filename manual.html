@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Questions - Quiz Runner</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="manualPage">
+
+  <div class="manualTopBar">
+    <a href="./menu.html" class="topBtn">← Main Menu</a>
+    <a href="./index.html" class="topBtn primaryTopBtn">Go to Game</a>
+  </div>
+
+  <main class="manualWrap">
+    <h1 class="manualTitle">Create a new question set</h1>
+    <p class="manualSub">Add up to 20 questions. These will be used in the game.</p>
+
+    <section class="setInfoCard">
+      <label class="fieldLabel">Set Title</label>
+      <input id="setTitle" class="setTitleInput" type="text" placeholder="Example: COMP 1712 Chapter 4" />
+
+      <label class="fieldLabel">Description</label>
+      <textarea id="setDescription" class="setDescInput" placeholder="Optional notes about this question set..."></textarea>
+    </section>
+
+    <section class="manualActionsRow">
+      <button id="addCardBtn" class="actionBtn">+ Add card</button>
+      <button id="saveSetBtn" class="actionBtn primaryActionBtn">Save set</button>
+      <button id="clearAllBtn" class="actionBtn dangerActionBtn">Delete all</button>
+    </section>
+
+    <section id="cardsContainer" class="cardsContainer"></section>
+  </main>
+
+  <script type="module" src="./manual.js"></script>
+</body>
+</html>

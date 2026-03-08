@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Question Generator</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="manualPage">
+  <div class="manualTopBar">
+    <a href="./menu.html" class="topBtn">← Main Menu</a>
+    <a href="./index.html" class="topBtn primaryTopBtn">Go to Game</a>
+  </div>
+
+  <main class="manualWrap">
+    <h1 class="manualTitle">AI Generate Questions</h1>
+    <p class="manualSub">Paste your study material and generate a quiz set for the game.</p>
+
+    <section class="setInfoCard">
+      <label class="fieldLabel" for="aiSetTitle">Set Title</label>
+      <input id="aiSetTitle" class="setTitleInput" type="text" placeholder="Example: COMP1510" />
+
+      <label class="fieldLabel" for="materialInput">Material</label>
+      <textarea id="materialInput" class="setDescInput" style="min-height:220px;" placeholder="Paste your study material here..."></textarea>
+
+      <label class="fieldLabel" for="questionCountInput">Question Count</label>
+      <input id="questionCountInput" class="setTitleInput" type="number" min="1" max="50" value="20" />
+    </section>
+
+    <section class="manualActionsRow">
+      <button id="generateBtn" class="actionBtn primaryActionBtn" type="button">Generate with AI</button>
+      <button id="saveGeneratedBtn" class="actionBtn" type="button">Save to Game</button>
+      <button id="clearGeneratedBtn" class="actionBtn dangerActionBtn" type="button">Clear</button>
+    </section>
+
+    <section class="setInfoCard">
+      <label class="fieldLabel">Status</label>
+      <div id="statusBox" class="savedHint">Ready.</div>
+    </section>
+
+    <section class="setInfoCard" style="margin-top:20px;">
+      <label class="fieldLabel">Generated Questions Preview</label>
+      <div id="generatedList" class="questionList">
+        <div class="savedHint">No generated questions yet.</div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./ai.js"></script>
+</body>
+</html>

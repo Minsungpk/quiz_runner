@@ -1,0 +1,405 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #060814;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+#game {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+body.gamePage {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#hud {
+  position: fixed;
+  left: 16px;
+  top: 16px;
+  width: min(560px, calc(100vw - 32px));
+  z-index: 9999;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+#musicBtn {
+  min-width: 90px;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  background: rgba(10, 14, 26, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 8px 12px;
+  backdrop-filter: blur(8px);
+  font-weight: 700;
+}
+
+.btn {
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  background: rgba(20, 28, 46, 0.75);
+}
+
+.energy,
+.boost {
+  background: rgba(10, 14, 26, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 10px 12px;
+  backdrop-filter: blur(8px);
+  width: 280px;
+}
+
+.energyTop,
+.boostTop {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.label {
+  font-weight: 900;
+  letter-spacing: 0.3px;
+}
+
+.value {
+  opacity: 0.85;
+  font-weight: 800;
+}
+
+.bar {
+  height: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  width: 100%;
+  background: rgba(120, 220, 160, 0.95);
+  transition: width 0.08s linear;
+}
+
+.fillBoost {
+  height: 100%;
+  width: 100%;
+  background: rgba(120, 220, 255, 0.95);
+  transition: width 0.08s linear;
+}
+
+.hint {
+  margin-top: 8px;
+  font-size: 12px;
+  opacity: 0.75;
+  line-height: 1.35;
+}
+
+/* ===================== TOP MIDDLE QUESTION ===================== */
+
+#questionWrap {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: min(900px, calc(100vw - 40px));
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+#questionText.question {
+  background: rgba(10, 14, 26, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 12px 18px;
+  backdrop-filter: blur(8px);
+  font-weight: 900;
+  font-size: 24px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.96);
+  min-width: 420px;
+  max-width: 100%;
+  display: block;
+  position: static;
+  transform: none;
+  margin: 0;
+}
+
+/* ===================== OVERLAY ===================== */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 10000;
+}
+
+.hidden {
+  display: none;
+}
+
+.card {
+  background: rgba(10, 14, 26, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  padding: 18px 20px;
+  min-width: 300px;
+  text-align: center;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 950;
+}
+
+.sub {
+  margin-top: 10px;
+  opacity: 0.85;
+  font-weight: 700;
+}
+
+/* ===================== MANUAL PAGE ===================== */
+
+.manualPage {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #040631 0%, #06093d 100%);
+  color: rgba(255, 255, 255, 0.94);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.manualTopBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 28px 0;
+}
+
+.topBtn {
+  text-decoration: none;
+  color: white;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.primaryTopBtn {
+  background: #4b63ff;
+}
+
+.manualWrap {
+  width: min(1320px, calc(100vw - 40px));
+  margin: 0 auto;
+  padding: 18px 0 48px;
+}
+
+.manualTitle {
+  font-size: 48px;
+  font-weight: 900;
+  margin: 12px 0 8px;
+}
+
+.manualSub {
+  margin: 0 0 22px;
+  opacity: 0.82;
+  font-size: 18px;
+}
+
+.setInfoCard {
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 18px;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.fieldLabel {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  opacity: 0.86;
+  margin-bottom: 8px;
+}
+
+.setTitleInput,
+.setDescInput,
+.cardInput,
+.cardTextarea,
+.cardSelect {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  border-radius: 14px;
+  background: rgba(31, 44, 88, 0.95);
+  color: white;
+  padding: 16px 18px;
+  font-size: 18px;
+}
+
+.setTitleInput {
+  margin-bottom: 18px;
+}
+
+.setDescInput {
+  min-height: 92px;
+  resize: vertical;
+}
+
+.manualActionsRow {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 20px 0 18px;
+}
+
+.actionBtn {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 20px;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.16);
+  color: white;
+}
+
+.primaryActionBtn {
+  background: #4b63ff;
+}
+
+.dangerActionBtn {
+  background: #b63a4b;
+}
+
+.cardsContainer {
+  display: grid;
+  gap: 18px;
+}
+
+.questionCard {
+  background: rgba(255, 255, 255, 0.11);
+  border-radius: 22px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.16);
+}
+
+.questionCardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.cardNumber {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.deleteCardBtn {
+  border: none;
+  background: rgba(255, 255, 255, 0.10);
+  color: white;
+  border-radius: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.cardColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cardTextarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.cardInput {
+  min-height: 56px;
+}
+
+.correctRow {
+  margin-top: 10px;
+}
+
+.cardSelect {
+  max-width: 220px;
+}
+
+.answerStack {
+  display: grid;
+  gap: 12px;
+}
+
+.savedHint {
+  margin-top: 16px;
+  font-size: 14px;
+  opacity: 0.76;
+}
+
+body.manualPage {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  height: auto !important;
+}
+
+html:has(body.manualPage) {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+@media (max-width: 900px) {
+  .manualTitle {
+    font-size: 34px;
+  }
+
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .manualWrap {
+    width: min(100vw - 20px, 1320px);
+  }
+
+  #questionText.question {
+    min-width: 0;
+    font-size: 18px;
+    padding: 10px 14px;
+  }
+}

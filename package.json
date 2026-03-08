@@ -1,0 +1,19 @@
+{
+  "name": "quiz_runner",
+  "version": "1.0.0",
+  "description": "Quiz Runner with Groq AI question generation",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "groq-sdk": "^0.37.0"
+  }
+}
